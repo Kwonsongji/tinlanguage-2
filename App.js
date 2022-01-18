@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import {useTailwind} from 'tailwind-rn';
 
 export default function App() {
+  const tw = useTailwind();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={tw('pt-12 flex-1 items-center justify-center')}>
+      <Text>Hello World!</Text>
+      <Button title="click on me">    </Button> 
     </View>
+    //Au lieu de div, on a des views ( compilent le relevant code pour un andoid/ un ios/le web)  pour car on veut build sur des natives devices.
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
